@@ -1,5 +1,5 @@
 # Simple-CRUD-API
-A simple CRUD API made in spring boot using jpa, h2, lombok & swagger.
+A simple CRUD API made in spring boot using mongodb, lombok & swagger.
 
 ## How to run
 Run the application by right clicking on ProjectApplication and clicking on run.
