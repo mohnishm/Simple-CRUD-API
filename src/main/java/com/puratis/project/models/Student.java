@@ -1,23 +1,23 @@
-package com.puratis.project.student;
+package com.puratis.project.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Data
-@Entity
 @Builder
 @ApiModel(description="All details about the student. ")
+@Document(collection = "student")
 public class Student {
     @Id
-    @GeneratedValue
-    private Long id;
+    @JsonIgnore
+    private String id;
     @NotNull(message = "Name cannot be null.")
     @NotBlank
     private String name;
@@ -29,7 +29,7 @@ public class Student {
         super();
     }
 
-    public Student(Long id, String name, String rollNumber) {
+    public Student(String id, String name, String rollNumber) {
         super();
         this.id = id;
         this.name = name;

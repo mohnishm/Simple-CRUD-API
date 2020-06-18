@@ -1,4 +1,4 @@
-package com.puratis.project.student;
+package com.puratis.project;
 
 public class StudentNotFoundException extends RuntimeException{
     public StudentNotFoundException(String exception) {
